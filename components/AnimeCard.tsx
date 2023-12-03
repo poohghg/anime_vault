@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { memo } from 'react';
 
 export interface AnimeProp {
     id: string;
@@ -22,7 +23,7 @@ function AnimeCard({ anime }: Prop) {
         <div className="max-w-sm rounded relative w-full">
             <div className="relative w-full h-[37vh]">
                 <Image
-                    src={anime.image.original}
+                    src={`https://shikimori.one${anime.image.original}`}
                     alt={anime.name}
                     fill
                     className="rounded-xl"
@@ -70,4 +71,4 @@ function AnimeCard({ anime }: Prop) {
     );
 }
 
-export default AnimeCard;
+export default memo(AnimeCard);
